@@ -1,0 +1,35 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<header></header>
+<div class="app-main-container">
+  
+    
+  
+    <!--
+  <h1>
+    Welcome to {{ title }}!
+    Current State: {{this._router}}
+  </h1>
+-->
+
+  
+<!--
+  <main [@myAwesomeAnimation] = getRouteAnimation(route) style="height: 100%;">
+      <router-outlet #route="outlet"></router-outlet>
+  </main>
+-->
+  <main class="main-class"
+  [@crazyAnimation] = pageState style="height:100%"
+  (@crazyAnimation.done)='setPageStatusToDefault()'
+  >
+      <div class="page-control">
+          <a class="link left-link" (click)='goLeft()' [hidden]="navigationShow.left == undefined" ><span>{{navigationShow.left}}left</span></a>
+          <a class="link top-link" (click)='goTop()'><span>top</span></a>
+          <a class="link right-link" (click)='goRight()'><span>right</span></a>
+          <a class="link botton-link" (click)='goBottom()'><span>bottom</span></a>
+      </div>
+    <router-outlet #route="outlet" ></router-outlet>
+  </main>
+
+</div>
+
+
